@@ -1,0 +1,18 @@
+{
+  "name": "auto-approve",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "pm2 start . --attach --name media-dlt",
+    "stop": "pm2 stop media-dlt"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "mongoose": "^8.5.3",
+    "node-telegram-bot-api": "^0.66.0",
+    "pm2": "^5.4.2"
+  }
+}
