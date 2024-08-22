@@ -427,7 +427,7 @@ setInterval(async () => {
 
                 try {
                     await bot.banChatMember(user.chatId, user.userId);
-                    await bot.unbanChatMember(user.chatId, user.userId);
+                    // await bot.unbanChatMember(user.chatId, user.userId);
                     await User.deleteOne({ _id: user._id });
                 } catch (err) {
                     console.error(`Failed to kick user ${user.userId}:`, err);
