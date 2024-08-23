@@ -314,6 +314,7 @@ bot.on('callback_query', async (query) => {
 });
 
 bot.on('chat_join_request', async (msg) => {
+    try {
     const chatId = msg.chat.id;
     const userId = msg.from.id;
     const group = await Group.findOne({ chatId });
@@ -330,9 +331,9 @@ bot.on('chat_join_request', async (msg) => {
             kickDate: kickDate
         });
         await user.save();
+    }
+    } catch (error) {
 
-    } else {
-        console.log(`Chat ${chatId} is not in the database. User ${userId} will not be added to the kick list.`);
     }
 });
 
